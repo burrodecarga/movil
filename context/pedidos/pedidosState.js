@@ -4,15 +4,14 @@ import PedidoContext from './pedidosContext';
 
 const PedidoState = props => {
   //estado Inicial
-  
+
   const initialState = {
     pedido: [],
-   
   };
 
   //useReduce con dispacht para ejecutar funciones para
 
-  const [state, dispacht] = useReducer(PedidoReducer, initialState);
+  const [state, dispatch] = useReducer(PedidoReducer, initialState);
 
   return (
     <PedidoContext.Provider value={{pedido: state.pedido}}>

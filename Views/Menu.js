@@ -1,8 +1,15 @@
-import React from 'react';
-import {Text} from 'react-native';
+import React, { useContext, useEffect } from 'react'
+import { Text } from 'react-native'
+import FirebaseContext from '../context/firebase/firebaseContext'
 
 const Menu = () => {
-  return <Text>Menu</Text>;
-};
+  const {menu, obtenerProductos } = useContext(FirebaseContext)
 
-export default Menu;
+  useEffect(() => {
+    obtenerProductos()
+  }, [])
+
+  return (<Text>Menu</Text>)
+}
+
+export default Menu

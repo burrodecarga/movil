@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet,LogBox} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -16,9 +16,19 @@ import ResumenPedido from './Views/ResumenPedido';
 import FirebaseState from './context/firebase/firebaseState';
 import PedidoState from './context/pedidos/pedidosState';
 
+
 const Stack = createStackNavigator();
 
 const App = () => {
+
+  // Ignore log notification by message:
+LogBox.ignoreLogs(['Warning: ...']);
+
+// Ignore all log notifications:
+LogBox.ignoreAllLogs();
+
+LogBox.ignoreLogs(['Remote debugger']);
+
   return (
     <>
       <FirebaseState>

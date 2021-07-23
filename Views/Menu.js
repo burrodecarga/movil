@@ -64,8 +64,8 @@ const Menu = () => {
                 <ListItem
                 onPress={()=>{
                   //Eliminar existencia del platillo
-                  const {existencia, ...platillo2} = platillo
-                  seleccionarPlatillo(platillo2)
+                  //const {existencia, ...platillo2} = platillo
+                  seleccionarPlatillo(platillo)
                   navigation.navigate('DetallePlatillo')
                 }}
                 >
